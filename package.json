@@ -1,0 +1,23 @@
+{
+  "name": "NodeJsApplication",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "Giridhar Reddy Sureddy",
+  "contributors": [],
+  "dependencies": {
+    "express": "^4.13.4",
+    "lodash": "^4.6.1",
+    "request": "^2.69.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "nodemon": "^1.9.1"
+  }
+}
