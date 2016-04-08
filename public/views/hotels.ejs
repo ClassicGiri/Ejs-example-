@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<title><%=title%></title>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" ></link>
+
+<link rel="stylesheet" href="public/css/hotels.css" ></link>
+</head>
+<html>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Search Hotels Again</a>
+            </div>
+		</div>
+</nav>
+<div class="row">
+<%if (results.length === 0) { %>
+<h1>no hotels</h1>
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://herrickzone.com/wp-content/uploads/2011/05/No-Hotel.jpg" alt="" >
+                            <div class="caption">
+                                <h4 class="pull-right">No holtels</h4>
+                                <h4><a href="/">search again</a>
+                                </h4>
+                                <p> Please change your filter settings</p>
+                            </div>
+						</div>
+					</div>
+<% } %>
+
+<% for(var i=0; i<results.length; i++) {%>
+   
+   
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="<%= results[i].thumbnailUrl%>" alt="" >
+                            <div class="caption">
+                                <h4 class="pull-right">$<%=results[i].ratesSummary.minPrice %></h4>
+                                <h4><a href="#"><%=results[i].name %></a>
+                                </h4>
+                                <p>City :<%=results[i].location.address.cityName %> ,phone   <%=results[i].location.address.phone %> </p>
+                            </div>
+                             <div class="ratings">
+                                <p class="pull-right"><%= results[i].totalReviewCount%>reviews</p>
+                                 <p>
+								 <% for(var j=0; j<(results[i].overallGuestRating)/2; j++) {%>
+								       <span class="glyphicon glyphicon-star"></span>
+								 <% } %>
+								 </p>
+                             </div>
+					    </div>
+					</div>
+                    
+<% } %>
+
+</div>
+</p>
+</body>
+
+</html>
